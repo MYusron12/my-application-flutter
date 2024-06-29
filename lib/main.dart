@@ -11,22 +11,43 @@ class MyApplication extends StatelessWidget{
       home: Scaffold(appBar: AppBar(
         title: const Text('Application'),
       ),
-      body: const Center(
-        child: MyBody(),
-      ),
+        body: const Center(
+          child: MyApplicationFul(),
+        ),
       )
     );
   }
 }
 
-class MyBody extends StatelessWidget{
-  const MyBody({super.key});
+class MyApplicationFul extends StatefulWidget{
+  const MyApplicationFul({super.key});
 
   @override
+  State<MyApplicationFul> createState() => _MyApplicationFulState();
+}
+
+class _MyApplicationFulState extends State<MyApplicationFul> {
+  int _counter = 0;
+  void _incrementCounter(){
+    setState(() {
+      _counter++;
+    });
+  }
+  
+  @override
   Widget build(BuildContext context) {
-    return const Text(
-      'Ini adalah body dari applikasi cy',
-      style: TextStyle(fontSize: 50),
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        const Text('Counter'),
+        Text(
+          '$_counter',
+        ),
+        ElevatedButton(
+          onPressed: _incrementCounter, 
+          child: const Text('Increment')
+        )
+      ],
     );
   }
 }
