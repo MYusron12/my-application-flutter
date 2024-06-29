@@ -1,32 +1,32 @@
-// import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-void main() => runApp(const MyApp());
+void main() => runApp(const MyApplication());
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class MyApplication extends StatelessWidget{
+  const MyApplication({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-          appBar: AppBar(
-            title: const Text('My First App'),
-          ),
-          body: const Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              Text('Column 1'),
-              Text('Column 2'),
-              Text('Column 3'),
-              Row(children: <Widget>[
-                Text('Row 1'),
-                Text('Row 2'),
-                Text('Row 3'),
-              ])
-            ],
-          )),
+      home: Scaffold(appBar: AppBar(
+        title: const Text('Application'),
+      ),
+      body: const Center(
+        child: MyBody(),
+      ),
+      )
+    );
+  }
+}
+
+class MyBody extends StatelessWidget{
+  const MyBody({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Text(
+      'Ini adalah body dari applikasi cy',
+      style: TextStyle(fontSize: 50),
     );
   }
 }
