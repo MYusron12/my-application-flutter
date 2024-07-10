@@ -1,53 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/belajar/hello_world.dart';
 
-void main() => runApp(const MyApplication());
+void main() {
+  MyApp app = const MyApp();
+  runApp(app);
+} 
 
-class MyApplication extends StatelessWidget{
-  const MyApplication({super.key});
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(appBar: AppBar(
-        title: const Text('Application'),
-      ),
-        body: const Center(
-          child: MyApplicationFul(),
-        ),
-      )
+    HelloWorldPage helloWorldPage = const HelloWorldPage();
+    MaterialApp materialApp = MaterialApp(
+      home: helloWorldPage,
     );
-  }
-}
-
-class MyApplicationFul extends StatefulWidget{
-  const MyApplicationFul({super.key});
-
-  @override
-  State<MyApplicationFul> createState() => _MyApplicationFulState();
-}
-
-class _MyApplicationFulState extends State<MyApplicationFul> {
-  int _counter = 0;
-  void _incrementCounter(){
-    setState(() {
-      _counter++;
-    });
-  }
-  
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: <Widget>[
-        const Text('Counter'),
-        Text(
-          '$_counter',
-        ),
-        ElevatedButton(
-          onPressed: _incrementCounter, 
-          child: const Text('Increment')
-        )
-      ],
-    );
+    return materialApp;
   }
 }
