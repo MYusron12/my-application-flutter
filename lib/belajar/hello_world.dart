@@ -5,18 +5,13 @@ class HelloWorldPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Text title = const Text('AppBar Hello World');
-    Text body = const Text('Body Hello World');
-    Center center = Center(
-      child: body,
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('AppBar Hello World'),
+      ),
+      body: const Center(
+        child: Text('Body Hello Dunia'),
+      ),
     );
-    AppBar appBar = AppBar(
-      title: title,
-    );
-    Scaffold scaffold = Scaffold(
-      appBar: appBar,
-      body: center,
-    );
-    return scaffold;
   }
 }
